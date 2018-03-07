@@ -25,13 +25,27 @@ defmodule Mix.Tasks.Elmx.New do
   end
 
   defp babel_brunch_config do
-    [{2, "ignore: "}, {3, ~s([/vendor/,)}, {3, ~s("js/elm.js]")}]
+    [{3, "ignore: ["}, 
+    {4, ~s(/vendor/,)}, 
+    {4, ~s("js/elm.js"]\n)}]
+    |> indent_lines()
+  end
+
+  defp elm_brunch_config do
+    [{1, ~s(plugins: {)}, 
+    {2, "elmBrunch: {" }, 
+    {3, ~s(elmFolder: "elm",)},
+    {3, ~s(mainModules: ["src/Main.elm"],)},
+    {3, ~s(outputFolder: "../js",)}, 
+    {3, ~s(outputFile: "elm.js",)} , 
+    {3, ~s(makeParameters: ["--warn"])},
+    {2, "},\n"}] 
     |> indent_lines()
   end
 
   defp indent_lines(lines) do
-    Enum.map_reduce(lines, "", fn(line, acc) ->
-      acc <> "\n" <> indent_line(line)
+    Enum.map_join(lines, "\n", fn(line) ->
+      indent_line(line)
     end)
   end
 
@@ -39,16 +53,5 @@ defmodule Mix.Tasks.Elmx.New do
     String.duplicate("  ", levels) <> line
   end
 
-  defp elm_brunch_config do
-    [{1, "plugins: {"}, 
-    {2, "elmBrunch: {" }, 
-    {3, ~s(elmFolder: "elm",)},
-    {3, ~s(mainModules: ["src/Main.elm"],)},
-    {3, ~s(outputFolder: "../js",)}, 
-    {3, ~s(outputFile: "elm.js",)} , 
-    {3, ~s(makeParameters: ["--warn"])},
-    {2, "},"}] 
-    |> indent_lines()
-  end
 
 end
