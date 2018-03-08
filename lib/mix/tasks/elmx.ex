@@ -1,6 +1,8 @@
 defmodule Mix.Tasks.Elmx.New do
+
   use Mix.Task
 
+  @shortdoc "Create a Phoenix + Elm project"
   def run([name]) do
     Mix.Task.run("phx.new", [name])
 
