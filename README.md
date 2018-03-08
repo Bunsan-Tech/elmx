@@ -4,7 +4,7 @@
 
 ## Usage
 
-```
+```shell
 $ mix elmx.new elmx_project
 ```
 
@@ -12,19 +12,20 @@ That's it!
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `elmx` to your list of dependencies in `mix.exs`:
+First install [create-elm-app](https://www.npmjs.com/package/create-elm-app) module
 
-```elixir
-def deps do
-  [
-    {:elmx, "~> 0.1.0"}
-  ]
-end
+```shell
+$ npm install create-elm-app -g
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/elmx](https://hexdocs.pm/elmx).
+Then install the mix archive
+
+```shell
+$ mix archive.install https://github.com/Bunsan-Tech/archives/raw/master/elmx-archives/elmx.ez
+```
+
+## About
+
+This mix task was inspired in this [blogpost](https://paulfioravanti.com/blog/2018/02/08/connecting-elm-to-phoenix-1-3/) written by [Paul Fioravanti](https://github.com/paulfioravanti) 
 
 ## TODO
