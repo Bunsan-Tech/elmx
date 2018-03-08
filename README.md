@@ -1,6 +1,14 @@
 # Elmx
 
-**TODO: Add description**
+**Create a Phoenix + Elm project with a single mix task**
+
+## Usage
+
+```
+$ mix elmx.new elmx_project
+```
+
+That's it!
 
 ## Installation
 
@@ -19,3 +27,4 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/elmx](https://hexdocs.pm/elmx).
 
+## TODO
